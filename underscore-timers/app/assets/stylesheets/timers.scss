@@ -1,0 +1,31 @@
+body{
+  background-color: #000;
+  color: #00ff00;
+}
+
+input {
+  padding: 10px;
+  width: 500px;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+
+button {
+  border-radius: 9px;
+  background-color: #fff;
+  font-size: 200%;
+  border: none;
+
+}
+.box {
+  border: 1px dashed #009900;
+  text-align: center;
+  height: 50px;
+  min-width: 50px;
+  display: inline-block;
+  margin: 5px;
+  line-height: 3;
+}

@@ -1,0 +1,31 @@
+%section
+  %h2
+    Bank of WDI
+
+  %section
+  %h2 Savings Account
+
+  %h2#balance
+
+  %div.one= text_field_tag 'deposit', nil, :placeholder => 'deposit', :id => 'savings_deposit'
+
+  %div.one= submit_tag 'deposit', :id => 'calc_deposit'
+
+
+  %div.one= text_field_tag 'withdrawl', nil, :placeholder => 'withdrawl', :id => 'savings_withdrawl'
+
+  %div.one= submit_tag 'withdrawl', :id => 'calc_withdrawl'
+
+  %section
+  %h2 Cheque Account
+
+  %h2#chq_balance
+
+  %div.one= text_field_tag 'deposit', nil, :placeholder => 'deposit', :id => 'cheque_deposit'
+
+  %div.one= submit_tag 'deposit', :id => 'chq_calc_deposit'
+
+
+  %div.one= text_field_tag 'withdrawl', nil, :placeholder => 'withdrawl', :id => 'cheque_withdrawl'
+
+  %div.one= submit_tag 'withdrawl', :id => 'chq_calc_withdrawl'

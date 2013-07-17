@@ -1,0 +1,19 @@
+%div#app
+  %div#header WDI BANK
+  %div
+    Checking
+    %div.output#checking $1000.00
+    .controls
+      %input#c_amount{:type => 'text'}
+      %input#c_deposit{:type => 'button', :value => 'Deposit'}
+      %input#c_withdrawl{:type => 'button', :value => 'Withdrawl'}
+
+  %div
+    Savings
+    %div.output#savings $1000.00
+    .controls
+      %input#s_amount{:type => 'text'}
+      %input#s_deposit{:type => 'button', :value => 'Deposit'}
+      %input#s_withdrawl{:type => 'button', :value => 'Withdrawl'}
+  %div
+
