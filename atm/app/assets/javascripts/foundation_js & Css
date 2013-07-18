@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require foundation
+//= require 'atm'
+
+
+
+$(function(){ $(document).foundation(); });
+
+=======
+
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ *=

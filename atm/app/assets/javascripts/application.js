@@ -12,9 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-
-// = require 'foundation/js/foundation/css
-
+//= require 'atm'
 
 $(function(){ $(document).foundation(); });

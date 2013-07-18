@@ -3,12 +3,12 @@
 %div#current.box
   %img
 
-= text_field_tag 'color', nil, :autofocus => true
+= text_field_tag 'color', nil, :autofocus => true, :placeholder => 'Write a colour'
 = button_tag 'Add Color', :id => 'add_color'
 = button_tag 'Erase Paint', :class => 'erase', :id => 'clear'
 = button_tag 'Clear Color Palette', :id => 'clear_color_palette'
 
-= text_field_tag 'image', nil, :autofocus => true
+= text_field_tag 'image', nil, :autofocus => true, :placeholder => 'Paste Image URL'
 = button_tag 'Add image', :id => 'add_image'
 = button_tag 'Clear', :id => 'clear_image'
 
