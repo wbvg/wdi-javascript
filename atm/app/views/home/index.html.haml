@@ -1,21 +1,19 @@
 %section
-  %h2
-    Bank of WDI
+  %h2 WDI Bank
+  %div.savings
+    %h2 Savings Account
 
-  %section
-  %h2 Savings Account
+    %h2#balance
 
-  %h2#balance
+    %div.one= text_field_tag 'deposit', nil, :placeholder => 'Enter amount', :id => 'savings_amount'
+    %div.one= submit_tag 'deposit', :id => 'calc_deposit', :class => 'radius button'
+    %div.one= submit_tag 'withdrawl', :id => 'calc_withdrawl', :class => 'radius button'
 
-  %div.one= text_field_tag 'deposit', nil, :placeholder => 'deposit', :id => 'savings_amount'
-  %div.one= submit_tag 'deposit', :id => 'calc_deposit'
-  %div.one= submit_tag 'withdrawl', :id => 'calc_withdrawl'
+  %div.cheque
+    %h2 Cheque Account
 
-  %section
-  %h2 Cheque Account
+    %h2#chq_balance
 
-  %h2#chq_balance
-
-  %div.one= text_field_tag 'deposit', nil, :placeholder => 'deposit', :id => 'cheque_amount'
-  %div.one= submit_tag 'deposit', :id => 'chq_calc_deposit'
-  %div.one= submit_tag 'withdrawl', :id => 'chq_calc_withdrawl'
+    %div.one= text_field_tag 'deposit', nil, :placeholder => 'Enter amount', :id => 'cheque_amount'
+    %div.one= submit_tag 'deposit', :id => 'chq_calc_deposit', :class => 'radius button'
+    %div.one= submit_tag 'withdrawl', :id => 'chq_calc_withdrawl', :class => 'radius button'

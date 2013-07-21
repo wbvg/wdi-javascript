@@ -1,8 +1,10 @@
-%ul.no-bullet
+%ul#priorities.no-bullet
   - @priorities.each do |priority|
     %li
       %span.color_box.invisible= priority.color
-      %span= priority.name
+      %span.name= priority.name
+      %span.value.invisible= priority.value
+      %span.id.invisible= priority.id
 
 %div.row
   %div.columns.large-3
@@ -16,6 +18,8 @@
           = text_field_tag 'name'
           = label_tag 'value'
           = text_field_tag 'value'
-          = link_to('Cancel', '#', :id=>'cancel_priority', :class => 'button radius tiny alert')
-          = submit_tag 'Create New Priority', :id => 'create_priority', :class => 'button radius tiny'
+          = hidden_field_tag 'priority_id'
+          = link_to('Hide', '#', :id=>'cancel_priority', :class => 'button radius tiny alert')
+          = link_to('Clear Form', '#', :id=>'clear_priority', :class => 'button radius tiny alert')
+          = submit_tag 'Create | Update Priority', :id => 'create_priority', :class => 'button radius tiny'
   %div.columns.large-9

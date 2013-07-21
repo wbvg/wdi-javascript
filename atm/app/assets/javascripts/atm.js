@@ -1,12 +1,10 @@
 $(document).ready(function () {
-        $('h2').css('color', 'red');
-        $('div').addClass('success');
-        // $('div:even').addClass('alert');
-        // $('#btn').click(cool_popup);
+        $('h2').css('color', '#fff');
+        $('div').addClass('');
 
         var balance = 1000;
 
-        /* Savings Account */
+        /*==== Savings Account ====*/
         /* Addition */
 
         $('#balance').text(balance);
@@ -20,6 +18,7 @@ $(document).ready(function () {
 
         $('#calc_deposit').click(compute_savings_deposit);
         $('#balance').addClass('success');
+
 
         /* Subtraction */
 
@@ -65,6 +64,7 @@ $(document).ready(function () {
 
         var compute_cheque_withdrawl = function () {
             var cheque_withdrawl = parseInt($('#cheque_amount').val());
+            var overdraft = chq_balance - cheque_amount
 
             if (chq_balance > cheque_withdrawl) {
                 $('#chq_balance').removeClass('alert');
@@ -73,18 +73,19 @@ $(document).ready(function () {
 
                 // Writing the cheque code
 
-            // } else if (chq_balance <= cheque_withdrawl && chq_balance < 0) {
-            //     $('#balance').addClass('borrow');
-            //     var overdraft = (balance == $('#cheque_amount').val()) ? '#chq_balance' : '#balance';
-            //     overdraft = chq_balance + $('#cheque_amount').val()) + balance);
+            } else if (0 > balance + (chq_balance - cheque_amount)) {
+                chq_balance + overdraft
+                $('#balance').addClass('borrow');
 
-        } else {
-            $('#chq_balance').addClass('alert');
-            alert('Insufficient funds in Savings').addClass('alert');
+                alert('Insufficient funds everywhere.');
+             } else { // Withdraw appropriate amount from both accounts.
+                balance += (chq_balance - cheque_amount);
+                $('#chq_balance').addClass('alert');
+                alert('Insufficient funds in Savings').addClass('alert');
         };
 
-
     $('#chq_balance').text(chq_balance);
+    $('#balance').text(balance);
 }
 $('#chq_calc_withdrawl').click(compute_cheque_withdrawl);
 $('#chq_balance').addClass('success');
