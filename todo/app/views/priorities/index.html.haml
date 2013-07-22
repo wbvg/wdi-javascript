@@ -1,6 +1,13 @@
+%script
+  var priorities = [];
 %ul#priorities.no-bullet
-  - @priorities.each do |priority|
-    %li
+  - @priorities.order(:value).reverse.each do |priority|
+    %li{:id => "priority_#{priority.id}"}
+      %script
+        = "priorities.push({id: #{priority.id}, name: '#{priority.name}', value: #{priority.value}, color: '#{priority.color}'})"
+      %span.priority
+        = image_tag('famfamfam/icons/add.png', :class => 'up')
+        = image_tag('famfamfam/icons/delete.png', :class => 'down')
       %span.color_box.invisible= priority.color
       %span.name= priority.name
       %span.value.invisible= priority.value
@@ -22,4 +29,5 @@
           = link_to('Hide', '#', :id=>'cancel_priority', :class => 'button radius tiny alert')
           = link_to('Clear Form', '#', :id=>'clear_priority', :class => 'button radius tiny alert')
           = submit_tag 'Create | Update Priority', :id => 'create_priority', :class => 'button radius tiny'
+          = submit_tag 'Submit', :id => 'update_priority', :class => 'button radius tiny'
   %div.columns.large-9

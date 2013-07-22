@@ -15,5 +15,7 @@
 //= require foundation
 //= require_tree .
 //= require 'minicolors/jquery.minicolors'
+//= require 'underscore'
+
 
 $(function(){ $(document).foundation(); });

@@ -34,6 +34,12 @@ $(document).ready(function () {
                 $('#balance').addClass('alert');
                 alert('Insufficient funds');
             }
+            // } else if (balance < 0) {
+            //     balance = 0;
+            //     $('#balance').addClass('alert');
+            //     $('#balance').text(chq_balance);
+            //     alert('Insufficient funds in Savings Account').addClass('alert');
+
             $('#balance').text(balance);
         }
 
@@ -62,26 +68,33 @@ $(document).ready(function () {
 
         $('#chq_balance').text(chq_balance);
 
+
+
         var compute_cheque_withdrawl = function () {
             var cheque_withdrawl = parseInt($('#cheque_amount').val());
-            var overdraft = chq_balance - cheque_amount
-
-            if (chq_balance > cheque_withdrawl) {
+            var overdraft = (chq_balance - cheque_withdrawl)
+   // debugger;
+            if (chq_balance >= cheque_withdrawl) {
                 $('#chq_balance').removeClass('alert');
                 $('#chq_balance').addClass('success');
                 chq_balance = chq_balance - cheque_withdrawl;
 
                 // Writing the cheque code
+            } else if (overdraft < 0) { // Moving money from Cheque Account.
+                balance = balance - (cheque_withdrawl - chq_balance);
+                chq_balance = 0;
+                if (balance < 0) {
+                $('#balance').addClass('alert');
 
-            } else if (0 > balance + (chq_balance - cheque_amount)) {
-                chq_balance + overdraft
-                $('#balance').addClass('borrow');
+                balance = 0;
+                alert('Insufficient funds');
 
-                alert('Insufficient funds everywhere.');
-             } else { // Withdraw appropriate amount from both accounts.
-                balance += (chq_balance - cheque_amount);
-                $('#chq_balance').addClass('alert');
-                alert('Insufficient funds in Savings').addClass('alert');
+                return;
+                }
+
+                $('#balance').addClass('alert');
+                $('#chq_balance').addClass('borrow');
+                alert('Borrowing from Savings Account!');
         };
 
     $('#chq_balance').text(chq_balance);
