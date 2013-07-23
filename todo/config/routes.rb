@@ -1,14 +1,17 @@
 Todo::Application.routes.draw do
   root :to => 'home#index'
   resources :users, :only => [:index, :new, :create]
+  resources :tasks, :only => [:index, :new, :create, :update]
   resources :priorities, :only => [:index, :create, :update] do
     member do
       post :up
       post :down
+    end
   end
-end
 
-  get '/login' => 'session#new'
-  post '/login' => 'session#create'
-  delete '/logout' => 'session#destroy'
+
+
+    get '/login' => 'session#new'
+    post '/login' => 'session#create'
+    delete '/logout' => 'session#destroy'
 end

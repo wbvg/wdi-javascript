@@ -10,7 +10,10 @@
           <li><a href="/login">Login</a></li>
           <li><a href="/users/new">Create User</a></li>
           <li><a href="/users">See All Users</a></li>
-
+          <% if @auth.present? %>
+            <li><a href="/priorities">Priorities</a>
+            <li><a href="/tasks">Tasks</a>
+          <% end %>
         </ul>
         <ul class="right">
           <li><%= link_to( 'logout' , logout_path, :method => :destroy ) %></li>

@@ -1,7 +1,16 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .invisible {
   display: none!important;
 }
-
 
 .color_box {
 display: inline-block;
@@ -10,10 +19,20 @@ vertical-align: middle;
 width: 35px;
 height: 35px;
 margin: 0 5px 5px 0;
+cursor: pointer;
+margin: 5px;
 }
-
 
 .color_box:hover {
   border-color: pink;
   opacity: 0.3;
+}
+
+#map {
+  height: 100%;
+}
+
+#map_canvas{
+  width: 500px;
+  height: 500px;
 }

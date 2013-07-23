@@ -58,6 +58,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geocoder (1.1.8)
     haml (4.0.3)
       tilt
     hike (1.2.3)
@@ -152,6 +153,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
+  geocoder
   haml
   jquery-rails
   meta_request

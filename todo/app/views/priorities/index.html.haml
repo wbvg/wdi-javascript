@@ -1,7 +1,7 @@
 %script
   var priorities = [];
 %ul#priorities.no-bullet
-  - @priorities.order(:value).reverse.each do |priority|
+  - @priorities.each do |priority|
     %li{:id => "priority_#{priority.id}"}
       %script
         = "priorities.push({id: #{priority.id}, name: '#{priority.name}', value: #{priority.value}, color: '#{priority.color}'})"

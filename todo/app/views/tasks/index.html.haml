@@ -1,0 +1,49 @@
+%script
+  var tasks = [];
+%ol#taski.no-bullet
+  - @tasks.each do |task|
+    %li{:id => "task_#{task.id}"}
+      %script
+        = "tasks.push({id: #{task.id}, title: '#{task.title}', description: '#{task.description}', duedate: '#{task.duedate}', is_complete: #{task.is_complete || 'false'}, priority_id: '#{task.priority_id}', priority: '#{task.priority.name}', address: '#{task.address}'})"
+      %ul
+        %script
+          = "$(document).ready(function () {"
+          = "add_marker(#{task.latitude}, #{task.longitude}, '#{task.title}');"
+          = "});"
+        %li= task.title
+        %li= task.description
+        %li= task.duedate
+        %li= task.is_complete
+        %li= task.priority.name
+        %li= task.address
+        %li= button_tag 'Edit', :class => 'pinknose'
+
+%div#map
+  %div#map_canvas
+
+%div.row
+  %div.small-3.columns
+    %div.controls
+      %div.new
+        = button_tag 'New Task', :id => 'new_task', :class => 'button radius success tiny'
+
+      %div#greenmonster.taskform.invisible
+        = form_tag do
+          = label_tag 'title'
+          = text_field_tag 'title'
+          = label_tag 'description'
+          = text_field_tag 'description'
+          = label_tag 'duedate'
+          = text_field_tag 'duedate', nil, :type => 'date'
+          = label_tag 'is_complete'
+          = check_box_tag 'is_complete'
+          = label_tag 'address'
+          = text_area_tag 'address'
+          = label_tag 'priority'
+          = select_tag 'priority_id', options_from_collection_for_select(@auth.priorities, 'id', 'name')
+          = hidden_field_tag 'task_id'
+          = link_to('Cancel', '#', :id => 'cancel_task', :class => 'button radius tiny alert')
+          = link_to('Clear', '#', :id=>'clear_task', :class => 'button radius tiny alert')
+          = submit_tag 'Create', :id => 'create_task', :class => 'button radius tiny'
+          = submit_tag 'Submit', :id => 'update_task', :class => 'button radius success tiny'
+  %div.small-9.columns
