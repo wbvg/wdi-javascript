@@ -1,0 +1,11 @@
+%div.row
+  %div.span12
+    = form_for @stock, :remote => true do |f|
+      = f.label :symbol
+      = f.text_field :symbol, :autofocus => true
+      = f.label :shares
+      = f.number_field :shares
+      .br
+      = link_to('Cancel', '#', :id => 'cancel_stock_form', :class => 'btn btn-danger')
+      = f.submit 'Buy Shares', :class => 'btn btn-success'
+  %div.span12

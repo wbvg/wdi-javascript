@@ -1,0 +1,13 @@
+%div.row
+  %div.large-3.columns
+    = form_for @exercise, :remote => true do |f|
+      = f.label :activity
+      = f.text_field :activity, :autofocus => true
+      = f.label :value
+      = f.text_field :value
+      = f.label :unit
+      = f.text_field :unit
+      = f.label :completed
+      = f.text_field :completed, :type => 'date'
+      = f.submit nil, :class => 'button radius tiny'
+  %div.large-9.columns

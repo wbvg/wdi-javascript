@@ -1,0 +1,8 @@
+%div.row
+- @stocks.each do |stock|
+  %div.span2
+    %ul
+      %li= check_box_tag(stock.symbol, ' ', false, :class => 'show_chart')
+      %li= stock.symbol.upcase
+      %li= stock.shares
+    %div.span2

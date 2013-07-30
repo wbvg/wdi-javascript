@@ -1,0 +1,5 @@
+= link_to('Create User', new_user_path, :remote => true, :class => 'btn btn-danger')
+
+%div#new_user
+%ol#users
+  = render(:partial => 'users/users')

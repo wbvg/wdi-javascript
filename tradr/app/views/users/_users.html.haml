@@ -1,0 +1,7 @@
+- @users.each do |user|
+  %row
+    %span6
+      %ul
+        %li= user.email
+        %li.btn.btn-success= number_to_currency user.balance
+    %hr

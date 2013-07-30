@@ -1,0 +1,13 @@
+%div.row
+  %div.span12
+    = form_for @user, :remote => true do |f|
+      = f.label :email
+      = f.text_field :email, :autofocus => true
+      = f.label :password
+      = f.password_field :password
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+      = f.label :balance
+      = f.text_field :balance
+      = f.submit 'Add', :class => 'btn btn-primary'
+  %div.span9
