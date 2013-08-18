@@ -157,7 +157,7 @@ DEPENDENCIES
   haml
   jquery-rails
   meta_request
-  pg
+  pg (~> 0.15.1)
   pry-debugger
   pry-rails
   pry-stack_explorer

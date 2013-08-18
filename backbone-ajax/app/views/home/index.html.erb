@@ -1,0 +1,18 @@
+<% @posts.each do |post| %>
+    <div class="post">
+      <h1 class="title"><%= post.title %></h1>
+      <h3 class="slug"><%= post.slug %></h3>
+
+      <div class="content"><%= post.content.html_safe %></div>
+
+
+   <div class="comment">
+      <% @comments.each do |comment| %>
+        <%= comment.twaddle %>
+        <%= comment.created_at %>
+       <% end %>
+    </div>
+
+
+    </div>
+<% end %>

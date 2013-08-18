@@ -18,6 +18,11 @@ class Stock < ActiveRecord::Base
   def Stock.quote(symbol)
     symbol = symbol.upcase
     YahooFinance::get_quotes(YahooFinance::StandardQuote, symbol)[symbol].lastTrade
+      #   YahooFinance::get_historical_quotes( 'YHOO',
+      #                                     Date.parse( '2005-06-30' ),
+      #                                     Date.today(), symbol )[symbol] do |row|
+      # puts "YHOO,#{row.join(',')}"
+      # end
   end
 
   before_save :upcase_symbol, :get_purchase_price

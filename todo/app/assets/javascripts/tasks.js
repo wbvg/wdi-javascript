@@ -110,7 +110,6 @@ var add_task_everywhere = function (task) {
     var priority_id = $('#priority_id').val();
     var token = $('input[name="authenticity_token"]').val();
 
-
     $.ajax({
       dataType: 'json',
       type: 'POST',
