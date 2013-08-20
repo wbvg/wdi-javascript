@@ -12,5 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require 'painter.js.coffee'
 //= require_tree .

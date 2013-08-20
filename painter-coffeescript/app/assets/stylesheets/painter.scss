@@ -1,0 +1,69 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body{
+background-color:#e96f0f;
+font-family: 'Lato', sans-serif;
+color: #ccc;
+padding: 0 40px;
+}
+
+
+h1 {
+  padding-left: 90px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 3px;
+  background-color: pink;
+  border: none;
+}
+
+.erase{
+  background-color: #bf5a6a;
+  color: #fff;
+
+}
+
+button {
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  border: none;
+}
+
+.box {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  margin: 5px;
+  background-size: 20%;
+  color: #333;
+  padding:5px;
+  text-align: center;
+}
+
+.eraser {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  margin: 5px;
+  background-size: 20%;
+  border: 2px solid red;
+}
+
+.paint {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  margin: -3px;
+  border: 1px dotted #ccc;
+}
+
+#canvas {
+  margin-top: 10px;
+  background-size: 100% auto;
+  background-repeat: none;
+  height: 900px;
+  width: 100%;
+}
